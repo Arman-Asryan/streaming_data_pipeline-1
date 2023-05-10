@@ -59,7 +59,7 @@ Please, perform the following steps to run the project locally:
 10) run data_check.py (optional) to check that the tables in the cloud have been updated 
 
 # Usage
-To use this repository, you can clone it to your local machine: git clone https://github.com/KristineManukyan/streaming-data-pipeline.git
+To use this repository, you can clone it to your local machine: git clone https://github.com/kmanukyan7/streaming_data_pipeline.git
 
 # Keywords
 Apache Kafka, Python, BigQuery
