@@ -6,7 +6,8 @@ The need for building streaming data pipelines for getting, processing, and anal
 
 # Content Description
 
-- getting_started.ini: contains the configuration data required for the application to produce and consume on Confluent Cloud. Please, download the file from the email message and place it in the project folder when running the code.
+- getting_started.ini: <br>
+      contains the configuration data required for the application to produce and consume on Confluent Cloud
 - configs.py: <br>
       contains the configuration data required for running the code on Python
 - tasks.py: <br>
@@ -34,7 +35,8 @@ The need for building streaming data pipelines for getting, processing, and anal
       contains the code to check the availabilty of data generated in the flow by querying the BigQuery tables using Python and printing the tables in Python             console
 - Files used for setting up log messages: <br>
       infrastructure_logger.py, consumer_logger.py, producer_logger.py
-- Files containing Google Cloud Credentials: please, download the files from the email message and place the files in the project folder when running the code.
+- Files containing Google Cloud Credentials: 
+     * please, download the files from the email message and place the files in the project folder when running the code.
        
       
 # Requirements and Flow
