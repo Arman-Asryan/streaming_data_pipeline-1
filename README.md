@@ -15,9 +15,9 @@ The need for building streaming data pipelines for getting, processing, and anal
 - sql_scripts (folder): <br>
       contains sql scripts to create, update, delete, and query the tables
 - infrastructure_initiation.py: <br>
-      * contains the code for the initial creation/deletion of the tables <br>
-      * should be run only once at the beginning of the flow <br>
-      * running the sql script to create DimTime table is not included in it as the DimTime is a static table, populating which takes really long, thus the table is already created and uploaded to BigQuery (still, the sql script for creating and populating DimTime can be found in sql_scripts folder)     
+    * contains the code for the initial creation/deletion of the tables <br>
+    * should be run only once at the beginning of the flow <br>
+    * running the sql script to create DimTime table is not included in it as the DimTime is a static table, populating which takes really long, thus the table is already created and uploaded to BigQuery (still, the sql script for creating and populating DimTime can be found in sql_scripts folder)     
 - producer.py: <br>
  contains the code to: <br>
      * download the data as JSON files <br>
