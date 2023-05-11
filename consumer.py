@@ -1,14 +1,8 @@
-import sys
 from argparse import ArgumentParser, FileType
 from configparser import ConfigParser
 from confluent_kafka import Consumer, OFFSET_BEGINNING
 import tasks
 import configs
-from datetime import datetime, timedelta
-import pandas as pd
-import os
-import logging
-from configs import log_folder
 from consumer_logger import *
 
 

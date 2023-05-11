@@ -1,16 +1,11 @@
-import sys
-from random import choice
 from argparse import ArgumentParser, FileType
 from configparser import ConfigParser
 from confluent_kafka import Producer
-import os
 import time
-from datetime import datetime, timedelta
-import pandas as pd
+from datetime import datetime
 import configs
 import tasks
-import logging
-from configs import log_folder, downloaded_data_folder
+from configs import downloaded_data_folder
 from producer_logger import *
 import utils
 

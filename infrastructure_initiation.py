@@ -1,9 +1,7 @@
 import configs
 import tasks
-import os
-import logging
-from configs import log_folder
 from infrastructure_logger import *
+import os
 
 logfolder = os.getcwd() + '\\' + log_folder
 if not os.path.exists(logfolder):

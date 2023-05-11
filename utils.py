@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 def find_start_date(current_date):
     weekday = current_date.weekday()
