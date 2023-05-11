@@ -40,7 +40,6 @@ The need for building streaming data pipelines for getting, processing, and anal
      * client_secrets.json
      * creds.txt
        
-      
 # Requirements and Flow
 
 Please, perform the following steps to run the project locally:
