@@ -36,9 +36,9 @@ The need for building streaming data pipelines for getting, processing, and anal
 - Files used for setting up log messages: <br>
       infrastructure_logger.py, consumer_logger.py, producer_logger.py
 - The project also has Google Cloud/Drive Credentials that are secret files and are delivered by email. Please, download the files from the email message and place the files in the project folder when running the code. The secret files are:
-     * capstone-project-28609-7062da8a48e0.json 
-     * client_secrets.json
-     * creds.txt
+     * capstone-project-28609-7062da8a48e0.json: Google Cloud Service Account credentials
+     * client_secrets.json: Google Cloud Client ID credentials
+     * creds.txt: Google Drive credentials
        
 # Requirements and Flow
 
