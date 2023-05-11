@@ -15,28 +15,30 @@ The need for building streaming data pipelines for getting, processing, and anal
 - sql_scripts (folder): <br>
       contains sql scripts to create, update, delete, and query the tables
 - infrastructure_initiation.py: <br>
-          - contains the code for the initial creation/deletion of the tables <br>
-          - should be run only once at the beginning of the flow <br>
-          - running the sql script to create DimTime table is not included in it as the DimTime is a static table, populating which takes really long, thus the table is already created and uploaded to BigQuery (still, the sql script for creating and populating DimTime can be found in sql_scripts folder)     
+          * contains the code for the initial creation/deletion of the tables <br>
+          * should be run only once at the beginning of the flow <br>
+          * running the sql script to create DimTime table is not included in it as the DimTime is a static table, populating which takes really long, thus the table is already created and uploaded to BigQuery (still, the sql script for creating and populating DimTime can be found in sql_scripts folder)     
 - producer.py: <br>
  contains the code to: <br>
-        - download the data as JSON files <br>
-        - upload the JSON fles from local directory to Google Drive <br>
-        - delete the files from local directory <br>
-        - produce a message and sent it to the consumer as a filename
+        * download the data as JSON files <br>
+        * upload the JSON fles from local directory to Google Drive <br>
+        * delete the files from local directory <br>
+        * produce a message and sent it to the consumer as a filename
 - consumer.py: <br>
       contains the code to: <br>
-        - consume the messages sent by the producer <br>
-        - add the data from Google Drive to Cloud as temporary tables <br>
-        - update the staging raw table in the Cloud by adding to it the data from the temporary tables <br>
-        - delete the temporary tables <br>
-        - update dim/fact tables based on the new data from the staging raw table <br>
+        * consume the messages sent by the producer <br>
+        * add the data from Google Drive to Cloud as temporary tables <br>
+        * update the staging raw table in the Cloud by adding to it the data from the temporary tables <br>
+        * delete the temporary tables <br>
+        * update dim/fact tables based on the new data from the staging raw table <br>
 - data_check.py: <br>
       contains the code to check the availabilty of data generated in the flow by querying the BigQuery tables using Python and printing the tables in Python             console
 - Files used for setting up log messages: <br>
       infrastructure_logger.py, consumer_logger.py, producer_logger.py
-- Files containing Google Cloud Credentials: 
-     * please, download the files from the email message and place the files in the project folder when running the code.
+- The project also has Google Cloud/Drive Credentials that are secret files and are delivered by email. Please, download the files from the email message and place the files in the project folder when running the code. The secret files are:
+     * capstone-project-28609-7062da8a48e0.json 
+     * client_secrets.json
+     * creds.txt
        
       
 # Requirements and Flow
