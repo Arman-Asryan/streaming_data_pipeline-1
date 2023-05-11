@@ -1,11 +1,6 @@
 import configs
 import tasks
 from infrastructure_logger import *
-import os
-
-logfolder = os.getcwd() + '\\' + log_folder
-if not os.path.exists(logfolder):
-    os.makedirs(logfolder)
 
 if __name__ == "__main__":
     client = tasks.create_client(

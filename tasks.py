@@ -48,7 +48,6 @@ def upload_from_local_to_drive(gauth_cred, client_config_file, folder_id, filena
 
     drive = GoogleDrive(gauth)
 
-    file_path = 'C:/Users/awsom/Desktop/kafka_confluent/kafka-python-getting-started/' + filename
     # Uploads the new JSON file to a specified Google Drive folder.
     file = drive.CreateFile({'title': file_name, 'parents': [{'id': folder_id}]})
     file.SetContentFile(filename)

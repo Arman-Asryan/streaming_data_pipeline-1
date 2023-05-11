@@ -13,10 +13,6 @@ downloaded_data = os.getcwd() + '\\' + downloaded_data_folder
 if not os.path.exists(downloaded_data):
     os.makedirs(downloaded_data)
 
-logfolder = os.getcwd() + '\\' + log_folder
-if not os.path.exists(logfolder):
-    os.makedirs(logfolder)
-
 def exec(stock_code, producer):
     current_date = datetime.now()
     start_date = utils.find_start_date(current_date)
