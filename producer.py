@@ -9,7 +9,6 @@ from datetime import datetime, timedelta
 import pandas as pd
 import configs
 import tasks
-import json
 import logging
 from configs import log_folder, downloaded_data_folder
 from producer_logger import *

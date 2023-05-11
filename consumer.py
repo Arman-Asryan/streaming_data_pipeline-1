@@ -6,7 +6,6 @@ import tasks
 import configs
 from datetime import datetime, timedelta
 import pandas as pd
-import json
 import os
 import logging
 from configs import log_folder

@@ -1,6 +1,5 @@
 import os
 import configs
-from datetime import datetime
 from google.oauth2 import service_account
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
@@ -9,22 +8,13 @@ import yfinance as yf
 import pandas as pd
 import pandas_gbq
 import uuid
-from configs import log_folder
-import logging
-from configs import log_folder
-from consumer_logger import *
 
-
-logs_folder = os.getcwd() + '\\' + log_folder
-if not os.path.exists(logs_folder):
-    os.makedirs(logs_folder)
 
 # Authenticate and create a BigQuery client
 def create_client(cred_json, project_id):
     credentials = service_account.Credentials.from_service_account_file(cred_json)
     client = bigquery.Client(credentials=credentials, project=project_id)
     return client
-    logging.info('BigQuery client has been created')
 
 # Download data from yfinance
 def download_from_yfinance(ticker, start_date, current_date, filename):
@@ -106,9 +96,7 @@ def add_data_to_raw_table(gauth_cred, cred_json, client_config_file, folder_id, 
     # upload the DataFrame to the new BigQuery table
     credentials = service_account.Credentials.from_service_account_file(cred_json)
     pandas_gbq.to_gbq(df, f'{project_id}.{dataset_id}.{table_name}', project_id=project_id, credentials=credentials)
-    logging.info('File has been uploaded to cloud')
     os.remove(file['title'])
-    logging.info('Downloaded file has been removed')
 
 
 def load_query(query_name):
