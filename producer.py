@@ -19,6 +19,10 @@ downloaded_data = os.getcwd() + '\\' + downloaded_data_folder
 if not os.path.exists(downloaded_data):
     os.makedirs(downloaded_data)
 
+logfolder = os.getcwd() + '\\' + log_folder
+if not os.path.exists(logfolder):
+    os.makedirs(logfolder)
+
 def exec(stock_code, producer):
     current_date = datetime.now()
     start_date = utils.find_start_date(current_date)
@@ -47,6 +51,7 @@ def exec(stock_code, producer):
         logging.info(f"{filename} has been deleted from local folder")
 
         producer.produce(topic, key=stock_code, value=filename, callback=delivery_callback)
+        producer.poll()
         logging.info(f"{filename} has been sent to consumer")
     else:
         print(download_status['message'])

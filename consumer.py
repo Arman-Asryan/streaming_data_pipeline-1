@@ -60,6 +60,7 @@ if __name__ == '__main__':
 
                 # Add data from drive folder to temporary staging tables
                 client = tasks.create_client(configs.cred_json, configs.project_id)
+                logging.info('BigQuery client has been created')
                 temp_table_name = configs.temp_staging_raw_table_name.format(filename=msg.value().decode('utf-8').split('.')[0])
                 tasks.add_data_to_raw_table(gauth_cred=configs.gauth_cred,
                                             cred_json=configs.cred_json,
@@ -68,6 +69,7 @@ if __name__ == '__main__':
                                             project_id=configs.project_id, dataset_id=configs.dataset_id,
                                             table_name=temp_table_name, filename=msg.value().decode('utf-8'))
                 logging.info(f"Data has been uploaded to cloud as {temp_table_name}")
+                logging.info('Downloaded file has been removed')
 
                 # Upload the data from temp table to staging raw table and delete temp table
                 tasks.update_staging_raw(client=client, project_id=configs.project_id,
