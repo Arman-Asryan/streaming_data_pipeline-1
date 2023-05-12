@@ -18,7 +18,7 @@ The need for building streaming data pipelines for getting, processing, and anal
     * contains the code for the initial creation of a BigQuery client instance, a schema, and creation/deletion of the tables <br>
     * this file should be run only once at the beginning of the flow to make sure that the client instance, the schema, and the tables are created <br>
     * the created tables are the following:
-            * FactPrice: contains the stocks, their prices, price types (i.e. Open, Low, High, Close, Adjusted Close) and volumes, corresponding dates and times, data ingestion dates and times, and foreign key columns for corresponding dim tables <br>
+      * FactPrice: contains the stocks, their prices, price types (i.e. Open, Low, High, Close, Adjusted Close) and volumes, corresponding dates and times, data ingestion dates and times, and foreign key columns for corresponding dim tables <br>
       * DimStock: contains the codes for the stocks used in the project <br>
       * DimDate: contains date data starting from 2023-01-01 <br>
       * DimTime: is a static table that contains time data <br>
