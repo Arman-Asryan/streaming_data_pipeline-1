@@ -15,9 +15,14 @@ The need for building streaming data pipelines for getting, processing, and anal
 - sql_scripts (folder): <br>
       contains sql scripts to create, update, delete, and query the tables
 - infrastructure_initiation.py: <br>
-    * contains the code for the initial creation/deletion of the tables <br>
-    * should be run only once at the beginning of the flow <br>
-    * running the sql script to create DimTime table is not included in it as the DimTime is a static table, populating which takes really long, thus the table is already created and uploaded to BigQuery (still, the sql script for creating and populating DimTime can be found in sql_scripts folder)     
+    * contains the code for the initial creation of a BigQuery client instance, a schema, and creation/deletion of the tables <br>
+    * this file should be run only once at the beginning of the flow to make sure that the client instance, the schema, and the tables are created <br>
+    * the created tables are the following:
+            * FactPrice: contains the stocks, their prices, price types (i.e. Open, Low, High, Close, Adjusted Close) and volumes, corresponding dates and times, data ingestion dates and times, and foreign key columns for corresponding dim tables
+            * DimStock: contains the codes for the stocks used in the project
+            * DimDate: contains date data starting from 2023-01-01
+            * DimTime: is a static table that contains time data 
+    * the file does not include running the sql script to create DimTime table as the DimTime is a static table, and creating and populating it in Bigquery takes really long due to using a free account, thus, the table is created in SQL Server and uploaded to BigQuery (still, the scripts for creating and populating DimTime table both in BigQuery and SQL Server can be found in sql_scripts folder)      
 - producer.py: <br>
  contains the code to: <br>
      * download the data as JSON files <br>
