@@ -21,7 +21,7 @@ The need for building streaming data pipelines for getting, processing, and anal
       * FactPrice: contains the stocks, their prices, price types (i.e. Open, Low, High, Close, Adjusted Close) and volumes, corresponding dates and times, data ingestion dates and times, and foreign key columns for corresponding dim tables <br>
       * DimStock: contains the codes for the stocks used in the project <br>
       * DimDate: contains date data starting from 2023-01-01 <br>
-      * DimTime: is a static table that contains time data <br>
+      * DimTime: is a static table that contains time data for 24 hours, including hours, minutes, and seconds <br>
     * the file does not include running the sql script to create DimTime table as the DimTime is a static table, and creating and populating it in Bigquery takes really long due to using a free account, thus, the table is created in SQL Server and uploaded to BigQuery (still, the scripts for creating and populating DimTime table both in BigQuery and SQL Server can be found in sql_scripts folder)      
 - producer.py: <br>
  contains the code to: <br>
