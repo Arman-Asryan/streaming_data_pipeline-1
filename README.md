@@ -1,5 +1,5 @@
 # streaming_data_pipeline
-This repository contains scripts to building stock market streaming data pipeline. 
+This repository contains scripts for building stock market streaming data pipeline. 
 
 # Abstract
 The need for building streaming data pipelines for getting, processing, and analysing data efficiently once it is generated grows in a fast manner. With an increase in demand for fast generation of useful insights, technologies and methods contributing to it develop as well. In the scope of this project, our aim was building a real-time data streaming pipeline while exploring different approaches and the available tools and technologies.
@@ -40,7 +40,7 @@ The need for building streaming data pipelines for getting, processing, and anal
       contains the code to check the availabilty of data generated in the flow by querying the BigQuery tables using Python and printing the tables in Python             console
 - Files used for setting up log messages: <br>
       infrastructure_logger.py, consumer_logger.py, producer_logger.py
-- The project also has Google Cloud/Drive Credentials that are secret files and are delivered by email. Please, download the files from the email message and place the files in the project folder when running the code. The secret files are:
+- The project also has Google Cloud/Drive Credentials that are secret files and are delivered by email per request. Please, download the files from the email message and place them in the project folder when running the code. The secret files are:
      * capstone-project-28609-7062da8a48e0.json: Google Cloud Service Account credentials
      * client_secrets.json: Google Cloud Client ID credentials
      * creds.txt: Google Drive credentials
