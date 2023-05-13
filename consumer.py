@@ -2,6 +2,7 @@ from argparse import ArgumentParser, FileType
 from configparser import ConfigParser
 from confluent_kafka import Consumer, OFFSET_BEGINNING
 import tasks
+import time
 import configs
 from consumer_logger import *
 
@@ -82,6 +83,8 @@ if __name__ == '__main__':
                                       dataset_id=configs.dataset_id,
                                       date_table_name=configs.dim_tables_to_be_updated['dim_date'])
                 logging.info(f"{configs.dim_tables_to_be_updated['dim_date']} has been updated")
+
+                time.sleep(90)
 
                 tasks.update_fact_table(client=client, project_id=configs.project_id,
                                         dataset_id=configs.dataset_id, dst_table_name="FactPrice",
