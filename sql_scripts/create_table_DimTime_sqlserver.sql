@@ -9,7 +9,7 @@ SET @counter = 0;
 SET @time_as_string = '000000';
 
 CREATE TABLE dbo.DimTime (
-  time_id NVARCHAR(36) NOT NULL,
+  time_id INT NOT NULL,
   time_as_string VARCHAR(6),
   full_time TIME(0),
   hour INT,
@@ -35,7 +35,7 @@ BEGIN
     notation24
   )
   VALUES (
-    NEWID(),
+    DATEPART(HOUR, @full_time)*10000+DATEPART(MINUTE, @full_time)*100+DATEPART(SECOND, @full_time),
     @time_as_string,
     @full_time,
     DATEPART(HOUR, @full_time),

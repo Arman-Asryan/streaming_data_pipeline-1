@@ -1,13 +1,13 @@
 -- script to create FactPrice table
 CREATE TABLE IF NOT EXISTS {project_id}.{dataset_id}.{table_name} (
-	date_id_sk STRING,
-	time_id_sk STRING,
+	date_id_sk INT64,
+	time_id_sk INT64,
 	stock_id_sk STRING,
 	date_time TIMESTAMP,
 	volume INT64,
 	price_type STRING,
 	price FLOAT64,
-	ingestion_time TIMESTAMP,
+	ingestion_time STRING,
 	ingestion_date STRING,
 	stock_code STRING,
 	staging_raw_id STRING,

@@ -7,7 +7,7 @@ SET counter = 0;
 SET time_as_string = '000000';
 
 CREATE OR REPLACE TABLE {project_id}.{dataset_id}.{table_name} (
-  time_id STRING NOT NULL,
+  time_id INT64 NOT NULL,
   time_as_string STRING,
   full_time TIME,
   hour INT64,
@@ -32,7 +32,7 @@ WHILE counter < 86400 DO
     notation24
   )
   VALUES (
-    Generate_UUID(),
+    EXTRACT(HOUR FROM full_time)*10000+EXTRACT(MINUTE FROM full_time)*100+EXTRACT(SECOND FROM full_time),
     time_as_string,
     full_time,
     EXTRACT(HOUR FROM full_time),
@@ -48,6 +48,6 @@ WHILE counter < 86400 DO
 
   -- Raise time_as_string with the hhmmss format
   SET time_as_string = FORMAT_TIME('%H%M%S', full_time);
-  
+
   SET counter = counter + 1;
 END WHILE;

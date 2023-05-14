@@ -70,7 +70,7 @@ if __name__ == '__main__':
                                          dataset_id=configs.dataset_id,
                                          dst_table_name=configs.staging_raw_table_name,
                                          src_table_name=temp_table_name)
-                logging.info(f"{configs.staging_raw_table_name} has been updated and {temp_table_name} deleted successfully")
+                logging.info(f"{configs.staging_raw_table_name} has been updated, and {temp_table_name} has been successfully deleted")
 
                 # Update dim and fact tables
                 tasks.update_dim_stock(client=client, project_id=configs.project_id,
@@ -84,7 +84,8 @@ if __name__ == '__main__':
                                       date_table_name=configs.dim_tables_to_be_updated['dim_date'])
                 logging.info(f"{configs.dim_tables_to_be_updated['dim_date']} has been updated")
 
-                time.sleep(90)
+                logging.info("Time Sleep")
+                time.sleep(120)
 
                 tasks.update_fact_table(client=client, project_id=configs.project_id,
                                         dataset_id=configs.dataset_id, dst_table_name="FactPrice",

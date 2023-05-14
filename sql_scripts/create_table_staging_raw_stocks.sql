@@ -7,7 +7,7 @@ Low FLOAT64,
 Close FLOAT64,
 Adj_Close FLOAT64,
 Volume INT64,
-ingestion_time TIMESTAMP,
+ingestion_time STRING,
 ingestion_date STRING,
 stock_code STRING,
 Staging_Raw_ID STRING);	
